@@ -27,6 +27,11 @@ num_cpus = "1.13.1"
 rand = "0.8.5"
 strum = "0.24"
 strum_macros = "0.24"
+mimalloc = { version = "*", default-features = false }
 
 [dev-dependencies]
 criterion = "0.3"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
